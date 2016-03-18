@@ -3,4 +3,4 @@
 * internet
 * docker
 * slack
-* aws
+* aws account
