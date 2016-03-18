@@ -25,7 +25,7 @@ var db = function (q, p, resp){
 }
 
 app.get('/items', function(request, response) {
-  db('SELECT * FROM items;', [], response)});
+  db('SELECT * FROM items order by id desc;', [], response)});
 
 app.post('/items', function(request, response) {
   db('insert into items (data) values($1);', [request.body], response) });

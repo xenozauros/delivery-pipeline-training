@@ -16,7 +16,16 @@
 
   <div class="container" ng-controller="CrudController">
 
-    <h3>Simple CRUD</h3>
+    <h1></h1>
+    <div class="row">
+      <div class="col-sm-9">
+        <h4>Simple CRUD</h4>
+      </div>
+      <div class="col-sm-3">
+        <a class="btn btn-primary pull-right" href="#" ng-click="clear()">Clear</a>
+      </div>
+      
+    </div>
 
     <table class="table">
       <thead>
@@ -25,6 +34,20 @@
         </tr>
       </thead>
       <tbody>
+      <tr>
+        <td><b>ID</b></td>
+        <td>
+          <div class="row">
+          <div class="col-sm-9">
+            <input class="form-control" type="text" ng-model="data" /> 
+          </div>
+          <div class="col-sm-3">
+          <a class="btn btn-primary pull-right " href="#" ng-click="add(data)">ADD</a>
+          </div>
+            
+          </div>
+        </td>
+      </tr>
       <tr ng-repeat="i in items">
         <td>{{i.id}}</td> 
         <td><pre>{{i.data | json}}</pre> </td>
