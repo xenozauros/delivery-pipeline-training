@@ -1,5 +1,15 @@
-## Continuous Delivery
+# Continuous Delivery
 
+
+## Run app
+```
+npm install
+source env.sh
+# Dev run 
+npm run start-dev
+# Prod run 
+npm run start
+```
 
 ## Clone project
 ## Read README
