@@ -6,10 +6,17 @@ var conString = (process.env.DATABASE_URL || "postgres://fhirbase:fhirbase@local
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/src'));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.get('/', function(request, response) {
-  response.render('index'); });
+var db_init = "CREATE TABLE IF NOT EXISTS items (id serial PRIMARY KEY , data JSON);";
+
+pg.connect(conString, function(err, client, done) {
+  if(err) return 'error fetching client from pool'+ err; 
+  client.query(db_init, [], function(err, result) {
+    done();
+    if(err) return 'error running query' + err;
+  });
+});
 
 var db = function (q, p, resp){
   pg.connect(conString, function(err, client, done) {
@@ -23,6 +30,9 @@ var db = function (q, p, resp){
     });
   });
 }
+
+app.get('/', function(request, response) {
+  response.render('index'); });
 
 app.get('/items', function(request, response) {
   db('SELECT * FROM items order by id desc;', [], response)});
