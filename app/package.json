@@ -1,0 +1,15 @@
+{
+  "name": "hellodevops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node_modules/.bin/jasmine-node test/*Spec.js"
+  },
+  "author": "niquola",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "latest",
+    "jasmine-node": "latest"
+  }
+}
