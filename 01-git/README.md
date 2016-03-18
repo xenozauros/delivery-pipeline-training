@@ -23,6 +23,9 @@ git clone repo-1 repo-3
 # git grep
 # git bisect
 # git submodules
+# git hooks
 
 
 ```
+
+deploy like heroku - https://gist.github.com/stas/1740190

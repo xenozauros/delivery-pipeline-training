@@ -1,8 +1,6 @@
 # delivery-pipeline-training
 
 
-
-
 ## Practice
 
 * sample project (node.js + postgresql)
@@ -24,6 +22,7 @@
  * ....
  * deploy in docker
  * ansible tower
+* PaaS heroku expirience (12 factor applications)
 * Amazon SDK
  * https://www.terraform.io/ (cloud formation)
  * infrastructure as a code
