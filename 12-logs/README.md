@@ -36,3 +36,8 @@ docker run -it --rm logstash logstash -e 'input { stdin { } } output { stdout { 
 docker run -it --name=logstash --link=elastic:elasticsearch -v "$PWD":/config-dir logstash logstash -f /config-dir/logstash.conf
 
 ```
+
+curl -L -O https://download.elastic.co/beats/filebeat/filebeat_1.1.2_amd64.deb
+sudo dpkg -i filebeat_1.1.2_amd64.deb
+sudo vim /etc/filebeat/filebeat.yml
+    
