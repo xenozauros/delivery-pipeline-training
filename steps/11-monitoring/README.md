@@ -7,3 +7,12 @@ intro about prometheus
 * metrics from aws
 * metrics from app
 * dashboards & search by grafana
+
+
+Install prometeus from docker
+
+```
+sudo  docker run -p 9090:9090 -v [PATH TO REPO]/delivery-pipeline-training/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml   prom/prometheus
+
+
+```
