@@ -14,17 +14,23 @@ app.use(bodyParser.json());
 
 var db_init = "CREATE TABLE IF NOT EXISTS items (id serial PRIMARY KEY , data JSON);";
 
-pg.connect(conString, function(err, client, done) {
-    console.log("Connected to DB", process.env.DATABASE_URL);
-    if(err) return 'error fetching client from pool'+ err;
-    client.query(db_init, [], function(err, result) {
-        console.log("INIT DB");
-        done();
-        if(err) return 'error running query' + err;
-        return null;
-    });
-    return null;
-});
+exports.init_db = function(cb){
+  pg.connect(conString, function(err, client, done) {
+      console.log("Connected to DB", process.env.DATABASE_URL);
+      if(err) {
+        console.log('error fetching client from pool', err);
+      }
+      client.query(db_init, [], function(err, result) {
+          if(err) {
+            console.log("ERROR", 'error running query' , err);
+          }else {
+            console.log("INIT DB is finished");
+            if (cb) { cb(); }
+          }
+          done();
+      });
+  });
+}
 
 var db = function (q, p, resp){
     console.log("SQL:", q);
@@ -75,6 +81,7 @@ app.delete('/items', function(request, resp) {
 });
 
 app.listen(app.get('port'), function() {
+    exports.init_db(function(){});
     console.log('Server is running on port', app.get('port'));
 });
 
