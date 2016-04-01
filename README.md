@@ -1,11 +1,13 @@
 # delivery-pipeline-training
 
+[![Build Status](https://travis-ci.org/devops-ru/delivery-pipeline-training.svg?branch=master)](https://travis-ci.org/devops-ru/delivery-pipeline-training)
+
 
 ## Practice
 
 * sample project (node.js + postgresql)
 * slack (with integrations)
-* git 
+* git
   * feature branches vs only trunk
   * monorepo (submodule, https://developer.atlassian.com/blog/2015/10/monorepos-in-git/)
 * github
@@ -39,7 +41,7 @@
  * prometeus (docker)
  * grafana
  * buisness metrics
-* Log aggregation 
+* Log aggregation
  * ELK
 * Alerting
  * http://riemann.io/
@@ -49,4 +51,4 @@ Extra:
 * consul
 * PaaS docker (mesos, kubernetis)
 
- 
+
