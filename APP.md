@@ -33,6 +33,23 @@ ansible all -i ops/hosts -m ping -vvvv
 ansible all -i ops/hosts -a 'uname -a'
 ```
 
+## Heroku
+
+```
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+heroku login
+heroku create
+heroku logs
+heroku addons:create heroku-postgresql:hobby-dev
+heroku logs
+```
+
+## Heroku & Travis
+
+```
+travis encrypt $(heroku auth:token) --add deploy.api_key
+```
+
 
 ## Flyway
 
