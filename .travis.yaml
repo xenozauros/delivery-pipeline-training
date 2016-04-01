@@ -1,0 +1,12 @@
+sudo: false
+language: node_js
+node_js: '5'
+addons:
+  postgresql: '9.4'
+cache:
+  before_script:
+    - 'bash install.sh'
+  script:
+    - 'source env.sh && npm run test'
+  after_success:
+    - 'echo deploy'
