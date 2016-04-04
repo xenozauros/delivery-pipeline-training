@@ -17,7 +17,7 @@ var db_init = "CREATE TABLE IF NOT EXISTS items (id serial PRIMARY KEY , data JS
 
 exports.init_db = function(cb){
   pg.connect(conString, function(err, client, done) {
-      console.log("INIT DB);
+      console.log("INIT DB");
       console.log("Connected to DB", process.env.DATABASE_URL);
       if(err) {
         console.log('error fetching client from pool', err);
