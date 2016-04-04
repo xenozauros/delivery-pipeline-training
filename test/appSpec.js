@@ -1,4 +1,4 @@
-var sut = require('../index.js');
+var sut = require('../app.js');
 var assert = require('assert');
 
 describe('app', function(){

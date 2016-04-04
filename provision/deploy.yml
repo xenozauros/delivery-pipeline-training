@@ -3,7 +3,7 @@
   remote_user: root
   handlers:
     - name: reload crudtest
-      shell: sudo service crudtest restart --force
+      shell: sudo /etc/init.d/crudtest stop && sudo /etc/init.d/crudtest start
 
   tasks:
   - name: prepare dir
@@ -26,4 +26,5 @@
       - reload crudtest
 
   - name: reload crudtest
-    shell: service crudtest restart --force
+    shell: /etc/init.d/crudtest stop && /etc/init.d/crudtest start
+    sudo: true
