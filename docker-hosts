@@ -30,8 +30,8 @@ for x in hosts:
     f.write("{0} {1}\n".format(x[0],x[1]))
 f.close()
 
-f = open('./provision/hosts', 'w')
-f.write("[app]\n")
-for x in hosts[1:]:
-    f.write("{0}\n".format(x[1]))
-f.close()
+#f = open('./provision/hosts', 'w')
+#f.write("[app]\n")
+#for x in hosts[1:]:
+    #f.write("{0}\n".format(x[1]))
+#f.close()

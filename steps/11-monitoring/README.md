@@ -9,10 +9,10 @@ intro about prometheus
 * dashboards & search by grafana
 
 
-Install prometeus from docker
+Start prometheus and grafana
 
 ```
-sudo  docker run -tid -p 9090:9090 -v [LOCAL PATH TO REPO]/delivery-pipeline-training/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml   prom/prometheus
-
+sudo docker run -tid -p 9090:9090 -v [PATH TO REPO]/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml -v /etc/hosts:/etc/hosts  prom/prometheus
+sudo docker run -d   -p 3000:3000 -v /etc/hosts:/etc/hosts --name=box-grafana   grafana/grafana
 
 ```
