@@ -4,7 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
 var app = express();
-var conString = process.env.DATABASE_URL;
+var conString = process.env.DATABASE_URL || "postgres://crudtest:crudtest@localhost/crudtest";
 console.log("DB config: ", conString );
 
 
