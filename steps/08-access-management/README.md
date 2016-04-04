@@ -50,10 +50,18 @@ vault write aws/roles/deploy policy=@policy.json
 vault revoke aws/creds/deploy/0d042c53-aa8a-7ce7-9d
 vault read aws/creds/deploy
 
+
+# real installation
+vault init
+25  export VAULT_ADDR='https://vault.aidbox.io:8200'
+30  export VAULT_TOKEN=<root-token>
+26  vault init
+32  vault unseal
+29  vault mount aws
+34  vault auth-enable github
+34  vault auth-enable userpass
+35  vault auth -methods
+36  vault write aws/config/root access_key=<access> secret_key=<secret>
+37  vault read aws/config/root
+40  vault write aws/roles/deploy policy=@role.json
 ```
-
-Demonstration case:
-
-* organization on github
-* aws keys
-* temporal aws keys to create ec2 instances by github account
