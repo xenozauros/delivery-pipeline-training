@@ -82,8 +82,10 @@ app.delete('/items', function(request, resp) {
     exports.truncate(request, function(x){ resp.send(x); });
 });
 
-app.listen(app.get('port'), function() {
+
+exports.start = function() {
+  app.listen(app.get('port'), function() {
     exports.init_db(function(){});
     console.log('Server is running on port', app.get('port'));
-});
-
+  });
+}

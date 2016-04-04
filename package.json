@@ -4,9 +4,9 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "start-dev": "./node_modules/.bin/nodemon index.js",
-    "test": "node_modules/.bin/mocha test/*"
+    "test": "node_modules/.bin/mocha test/appSpec.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
