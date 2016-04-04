@@ -5,6 +5,7 @@ addons:
   postgresql: '9.4'
 before_script:
   - bash install.sh
+  - npm run start
 script:
   - source env.sh && npm run test
 deploy:
