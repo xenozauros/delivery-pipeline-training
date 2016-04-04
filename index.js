@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var pg = require('pg');
 var app = express();
 var conString = process.env.DATABASE_URL;
+console.log("DB config: ", conString );
 
 
 app.locals.newrelic = newrelic;

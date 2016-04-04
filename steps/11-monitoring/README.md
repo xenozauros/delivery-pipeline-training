@@ -12,7 +12,7 @@ intro about prometheus
 Install prometeus from docker
 
 ```
-sudo  docker run -p 9090:9090 -v [PATH TO REPO]/delivery-pipeline-training/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml   prom/prometheus
+sudo  docker run -tid -p 9090:9090 -v [LOCAL PATH TO REPO]/delivery-pipeline-training/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml   prom/prometheus
 
 
 ```
