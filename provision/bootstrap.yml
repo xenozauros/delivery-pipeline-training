@@ -9,6 +9,7 @@
     with_items:
       - git
       - nodejs
+      - tmux
       - curl
       - npm
       - postgresql
@@ -38,5 +39,7 @@
     sudo_user: "postgres"
     sudo: yes
 
+- include: kiries.yml 
+- include: node_exporter.yml 
 - include: deploy.yml 
 

@@ -8,15 +8,22 @@ intro about prometheus
 * metrics from app
 * dashboards & search by grafana
 
-Login to app container and run
+## First run app docker container
+```
+sudo docker run --name box-app --link box-elastic:box-elastic.docker -p 5000:5000  -d devopsru/delivery-pipeline-training
+```
+
+## Login to app container and run
 ```
 /node_exporter 
 ```
 
-Start prometheus and grafana
+## Start prometheus and grafana
 
 ```
-sudo docker run -tid -p 9090:9090 -v [PATH TO REPO]/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml -v /etc/hosts:/etc/hosts  prom/prometheus
-sudo docker run -d   -p 3000:3000 -v /etc/hosts:/etc/hosts --name=box-grafana   grafana/grafana
+sudo docker run --name box-prometheus -p 9090:9090 --link box-app:box-app.docker -v [REPO DIR]/steps/11-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml -d prom/prometheus
+
+
+sudo docker run --name box-grafana --link box-prometheus:box-prometheus.docker -p 3000:3000 -d grafana/grafana
 ```
 
