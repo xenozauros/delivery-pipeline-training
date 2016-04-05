@@ -2,4 +2,4 @@
   remote_user: root
   sudo: true
   tasks:
-    - include: ./tasks/kiries.yml
+    - include: ./tasks/node_exporter.yml
