@@ -25,7 +25,7 @@
 
 (defn start [cfg]
   (time/start!)
-  (es/es-connect)
+  (es/es-connect "http://box-elastic.docker:9200")
   (stop)
   (reload cfg)
   "started")
