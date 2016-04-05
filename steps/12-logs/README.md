@@ -17,38 +17,20 @@ Filebeat https://www.elastic.co/guide/en/beats/filebeat/current/index.html
 
 ## Docker compose
 
-### Install docker-compose
+
+## Run ES with Kibana
 
 ```
-sudo -i
-curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-docker-compose --version
-```
-
-
-## Install ES
-
-
-```
-d run --name=elastic -it elastic
-docker inspect -f '{{ .NetworkSettings.IPAddress }}' elastic
-
-open http://172.17.0.IP:9200/_plugin/kopf
-
-curl 'http://172.17.0.IP:9200/?pretty'
+sudo docker run --name=box-elastic -d -it -v /etc/hosts:/etc/hosts devopsru/training-elastic
+open http://box-elastic.docker:9200/_plugin/kopf
+curl http://box-elastic.docker:9200/?pretty
 
 
 # sample data
 # https://github.com/ropensci/elastic_data
 
-docker run --name some-kibana -e ELASTICSEARCH_URL=http://some-elasticsearch:9200  kibana
-open http://172.17.0.IP:5601
-
-docker run -it --rm logstash logstash -e 'input { stdin { } } output { stdout { } }'
-
-docker run -it --name=logstash --link=elastic:elasticsearch -v "$PWD":/config-dir logstash logstash -f /config-dir/logstash.conf
-
+sudo docker run --name box-kibana -d -it -v /etc/hosts:/etc/hosts -e ELASTICSEARCH_URL=http://box-elastic:9200  devopsru/training-kibana
+open http://box-kibana:5601
 ```
 
 curl -L -O https://download.elastic.co/beats/filebeat/filebeat_1.1.2_amd64.deb

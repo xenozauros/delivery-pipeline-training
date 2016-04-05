@@ -1,0 +1,3 @@
+[submodule "steps/12-logs/training-elastic-image"]
+	path = steps/12-logs/training-elastic-image
+	url = https://github.com/devops-ru/training-elastic-image
