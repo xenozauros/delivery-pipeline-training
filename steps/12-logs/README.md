@@ -1,7 +1,6 @@
 # Logs Aggregation
 
-
-* setup ELK 
+* setup ELK (ElasticSearch Logstash Kibana)
 * integrate app into ELK
 * nginx logs
 * postgres logs
@@ -21,16 +20,17 @@ Filebeat https://www.elastic.co/guide/en/beats/filebeat/current/index.html
 ## Run ES with Kibana
 
 ```
-sudo docker run --name=box-elastic -d -it -v /etc/hosts:/etc/hosts devopsru/training-elastic
+sudo docker run --name=box-elastic -p 9200:9200 -v /etc/hosts:/etc/hosts -d devopsru/training-elastic-image
+curl http://box-elastic.docker:9200
 # open http://box-elastic.docker:9200/_plugin/kopf
-curl http://box-elastic.docker:9200/?pretty
-
 
 # sample data
 # https://github.com/ropensci/elastic_data
 
-sudo docker run --name box-kibana -d -it -v /etc/hosts:/etc/hosts -e ELASTICSEARCH_URL=http://box-elastic:9200  devopsru/training-kibana
-# open http://box-kibana.docker:5601
+
+sudo docker run --name=box-kibana -p 9300:5601 -d -v /etc/hosts:/etc/hosts -e ELASTICSEARCH_URL=http://box-elastic.docker:9200 devopsru/training-kibana-image
+
+# open http://box-kibana.docker:5601   or http://localhost:9300
 ```
 
 curl -L -O https://download.elastic.co/beats/filebeat/filebeat_1.1.2_amd64.deb

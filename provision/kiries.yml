@@ -1,0 +1,4 @@
+- hosts: app
+  remote_user: root
+  sudo: true
+  tasks:

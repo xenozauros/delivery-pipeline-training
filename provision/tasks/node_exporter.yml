@@ -1,0 +1,8 @@
+- name: Clone Node exporter
+  git: repo="https://github.com/prometheus/node_exporter.git" dest="/node_exporter"
+
+- name: Make Node exporter
+  shell: make
+  args:
+    chdir: /node_exporter
+
