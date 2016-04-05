@@ -3,52 +3,42 @@
 [![Build Status](https://travis-ci.org/devops-ru/delivery-pipeline-training.svg?branch=master)](https://travis-ci.org/devops-ru/delivery-pipeline-training)
 
 
-## Practice
+## Installation
 
-* sample project (node.js + postgresql)
-* slack (with integrations)
-* git
-  * feature branches vs only trunk
-  * monorepo (submodule, https://developer.atlassian.com/blog/2015/10/monorepos-in-git/)
-* github
-  * CI instrument
-  * hooks
-  * magic comments, task tracking
-* CI
- * travis
-* docker
- * intro (docker file, image creation, repository, volumes, networking)
- * swarm (Docker Compose)
- * network in docker
-* ansible
- * ....
- * deploy in docker
- * ansible tower
-* PaaS heroku expirience (12 factor applications)
-* Amazon SDK
- * https://www.terraform.io/ (cloud formation)
- * infrastructure as a code
-* Security management
- * https://www.hashicorp.com/blog/vault.html
-* Deploy staging
- * manual
- * automatic from travis
-* Database migrations
- * flyway
- * deploy schema changes
- * zero downtime deploy
-* Monitoring
- * prometeus (docker)
- * grafana
- * buisness metrics
-* Log aggregation
- * ELK
-* Alerting
- * http://riemann.io/
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
-Extra:
+source ~/.nvm/nvm.sh
 
-* consul
-* PaaS docker (mesos, kubernetis)
+git clone https://github.com/devops-ru/delivery-pipeline-training.git myapp
+git submodule init && git submodule update
+
+cd myapp
+
+nvm use 0.5
+
+npm install
+
+npm run test
+
+npm run start
+```
 
 
+## Deploy
+
+```
+heroku login
+heroku create
+heroku addons:create heroku-postgresql:hobby-dev
+git push heroku master
+```
+
+
+## Continuous Delivery
+
+```
+sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
+# travis setup heroku
+travis encrypt $(heroku auth:token) --add deploy.api_key
+```
