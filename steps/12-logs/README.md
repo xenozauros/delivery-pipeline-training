@@ -22,7 +22,7 @@ Filebeat https://www.elastic.co/guide/en/beats/filebeat/current/index.html
 
 ```
 sudo docker run --name=box-elastic -d -it -v /etc/hosts:/etc/hosts devopsru/training-elastic
-open http://box-elastic.docker:9200/_plugin/kopf
+# open http://box-elastic.docker:9200/_plugin/kopf
 curl http://box-elastic.docker:9200/?pretty
 
 
@@ -30,7 +30,7 @@ curl http://box-elastic.docker:9200/?pretty
 # https://github.com/ropensci/elastic_data
 
 sudo docker run --name box-kibana -d -it -v /etc/hosts:/etc/hosts -e ELASTICSEARCH_URL=http://box-elastic:9200  devopsru/training-kibana
-open http://box-kibana:5601
+# open http://box-kibana.docker:5601
 ```
 
 curl -L -O https://download.elastic.co/beats/filebeat/filebeat_1.1.2_amd64.deb

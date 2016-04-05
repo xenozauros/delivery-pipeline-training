@@ -1,3 +1,6 @@
 [submodule "steps/12-logs/training-elastic-image"]
 	path = steps/12-logs/training-elastic-image
 	url = https://github.com/devops-ru/training-elastic-image
+[submodule "steps/12-logs/training-kibana-image"]
+	path = steps/12-logs/training-kibana-image
+	url = https://github.com/devops-ru/training-kibana-image
