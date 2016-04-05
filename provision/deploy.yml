@@ -12,8 +12,6 @@
   - name: pull app
     git: repo={{ project_repo }} dest={{ project_root }} version={{ branch }}
 
-  # - name: flyway conf
-  #   template: src=templates/flyway.conf.j2 dest={{ project_root }}/flyway.conf
   - name: install deps
     shell: npm install
     args:
