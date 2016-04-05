@@ -15,6 +15,14 @@
       - libpq-dev
       - python-psycopg2
 
+  - name: Node alias to nodejs
+    shell: ln -s /usr/bin/nodejs /usr/bin/node
+
+  - name: Install forever js
+    npm: 
+      name: forever
+      global: yes
+
   - name: Postgres | Start Postgres
     service: name=postgresql state=started
 
