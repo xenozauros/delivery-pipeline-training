@@ -31,3 +31,6 @@
   get_url: url=https://raw.githubusercontent.com/technomancy/leiningen/2.5.1/bin/lein
            dest=/usr/bin/lein
            mode=0755
+
+- name: Install KIRIES [update certificates]
+  shell: update-ca-certificates -f

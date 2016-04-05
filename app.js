@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 var fs = require('fs');
 var util = require('util');
-var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
+var log_file = fs.createWriteStream('/var/log/app.log', {flags : 'w'});
 var log_stdout = process.stdout;
 
 
