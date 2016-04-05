@@ -10,7 +10,7 @@ intro about prometheus
 
 Login to app container and run
 ```
-/tmp/node_exporter 
+/node_exporter 
 ```
 
 Start prometheus and grafana

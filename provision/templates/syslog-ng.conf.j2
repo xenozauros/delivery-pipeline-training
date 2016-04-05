@@ -37,7 +37,7 @@ log {
   };
 
   source {
-    file("/var/log/app.log"
+    file("{{project_root}}/app.log"
       program_override("app")
       flags(no-parse)
       tags("app", "app")
