@@ -10,7 +10,7 @@ script:
 notifications:
   slack: devops-training-spb:kfjTXFxdFQxyBbAJ0UtYVqOe
 deploy:
-  app: pumpkin-tart-71750
+  app: boiling-stream-90100
   provider: heroku
   api_key:
-    secure: BOlDAOIWeL+XEgtkDt0P/xg7jf3LMqf8HATIIIPdiozfLSKuNVQkJLqgHyIoIXR4zaX//J4XTZNiIwUDklHQ56p7WUMZRGqGqlL5o0W9r1CcGy0LhqK34u5G6GHWR0lx5lUMM0ibIpoiv51dUxuAskgIU8HDLobRbTwMSfG2HU1PdQfZGd0Q+Echc7ZmL8j7Y4CnKFb+mRw6FKQxI0tPBqsEZHERmZLc8Ja5LxpyGSwj+iXqCmZYDFcIMtiOK/SHsb7behqdEpnuYLdi57983YecWEHIdMfpcdBT9NFtcvmVKp45hRYJwb39T6v4jCjt/7NO/9kZCoPn018ceemfq6YQbfQY4NGveyPxsZAidJdO5Ep2O3Hn1JeYC+1yOdW7pNWhy1qOBzFYYjynJCfweq9RvA7xQF4dqT/F+tXlTfE2Qqg+VPqtZdC5j+vnSc6litAsPUC+uqPcTF2EQL7Qr8EesIuHQrFKr4LKtOViH5RZ8y+aLzB5WoPaYYOU3PJSrivsLYeRpcOlj8DR3pF8zPkPhQDpjeATa2PNYtLAX4grJ7J5wpr0uSTL3TVR+sfLEJP9EXqVVeKPKlkujtBDvnUIqePFFtiOo0MVeNnP2EVZAXxnDavBIccqdn4ERw/ncbHpPbPKQuJSLWS7Vq9PmCD30f499QnChAElQwtll9I=
+    secure: 8fef2223-8dba-461f-af4f-e7a0fd7018c9
