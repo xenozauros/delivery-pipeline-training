@@ -8,7 +8,7 @@ before_script:
 script:
   - source env.sh && npm run test
 notifications:
-  slack: 'testing-bot:nDUQ4XTKW6m9VrTW89ByLxtA#general'
+  slack: devops-training-spb:kfjTXFxdFQxyBbAJ0UtYVqOe
 deploy:
   app: pumpkin-tart-71750
   provider: heroku
