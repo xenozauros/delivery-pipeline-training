@@ -8,11 +8,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['pumpkin-tart-71750'],
+  app_name: ['boiling-stream-90100'],
   /**
    * Your New Relic license key.
    */
-  license_key: 'eee61b7f7f91dd27420975c00ae02d8f97bb6922',
+  license_key: 'b83dafc27178c9c91f670db5f74a911e0f11f8d7',
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
